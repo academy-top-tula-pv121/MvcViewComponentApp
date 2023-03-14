@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@addTagHelper *, MvcViewComponentApp.ViewComponents
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div>
+    @await Component.InvokeAsync("TimeNow", new{ zone = 8, isShort = false })
+</div>
+<div>
+    @await Component.InvokeAsync("UserInfo", new {user = new User("Bob", 34)})
+</div>

@@ -8,17 +8,19 @@ namespace MvcViewComponentApp.ViewComponents
 
         public IViewComponentResult Invoke()
         {
+            //return View("UserListView", users);
+
             int numbers = users.Count();
-            return View("UserListView", users);
+            
             if(Request.Query.ContainsKey("number"))
             {
                 Int32.TryParse(Request.Query["number"], out numbers);
             }
 
-            ViewBag.UserCount = users.Take(numbers);
+            ViewBag.Users = users.Take(numbers);
             ViewData["Header"] = $"Users count: {numbers}";
 
-            return View();
+            return View("UserListView");
         }
     }
 }

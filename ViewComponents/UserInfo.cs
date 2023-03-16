@@ -11,7 +11,7 @@ namespace MvcViewComponentApp.ViewComponents
         {
             string result = $"<div><h3>User:</h3>";
             result = $"{result}<p>Name: {user.Name}</p>";
-            result = $"{result}<p>Age: {user.Age}</p>";
+            result = $"{result}<p>Age: {user.Age}</p></div>";
             return new HtmlContentViewComponentResult(new HtmlString(result));
         }
     }
